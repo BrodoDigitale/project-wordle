@@ -1,20 +1,20 @@
 import React, {useCallback, useState} from 'react';
 
-function GuessInput() {
+function GuessInput({ onSubmit }) {
   const [word, setWord] = useState('');
 
   const onChange = useCallback((e) => {
     setWord(e.target.value.trim().toUpperCase());
   }, [])
 
-  const onSubmit = useCallback((e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
-    console.log(word);
+    onSubmit(word);
     setWord('');
-  }, [word])
+  }, [onSubmit, word])
 
   return (
-      <form className="guess-input-wrapper" onSubmit={onSubmit}>
+      <form className="guess-input-wrapper" onSubmit={handleSubmit}>
         <label htmlFor="guess-input">Enter guess:</label>
         <input
             id="guess-input"
