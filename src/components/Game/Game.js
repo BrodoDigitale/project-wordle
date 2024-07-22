@@ -1,7 +1,6 @@
-import React, {useCallback} from 'react';
-
-import { sample } from '../../utils';
-import { WORDS } from '../../data';
+import React, { useCallback } from "react";
+import { sample } from "../../utils";
+import { WORDS } from "../../data";
 import GuessInput from "../GuessInput";
 import GuessResults from "../GuessResults";
 
@@ -13,15 +12,18 @@ console.info({ answer });
 function Game() {
   const [results, setResults] = React.useState([]);
 
-  const addGuess = useCallback((word) => {
-    setResults([...results, word]);
-  }, [results]);
+  const addGuess = useCallback(
+    (word) => {
+      setResults([...results, word]);
+    },
+    [results]
+  );
 
-  return(
-      <>
-          <GuessInput onSubmit={addGuess}/>
-          <GuessResults results={results} />
-      </>
+  return (
+    <>
+      <GuessResults results={results} />
+      <GuessInput onSubmit={addGuess} />
+    </>
   );
 }
 
