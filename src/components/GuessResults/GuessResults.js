@@ -8,7 +8,9 @@ function GuessResults(props) {
   return (
     <div className="guess-results">
       {range(0, NUM_OF_GUESSES_ALLOWED).map((num) => {
-        return <Guess result={results[num]} key={`${num}`} />;
+        return (
+          <Guess result={results[num]} key={`${num}`} answer={props.answer} />
+        );
       })}
     </div>
   );
