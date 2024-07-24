@@ -5,7 +5,10 @@ function HappyBanner({ num }) {
     <div className="happy banner">
       <p>
         <strong>Congratulations!</strong> Got it in
-        <strong>{` ${num} ${num > 1 ? "guesses" : "guess"}`}</strong>.
+        <strong>
+          {num} ${num > 1 ? "guesses" : "guess"}`
+        </strong>
+        .
       </p>
     </div>
   );

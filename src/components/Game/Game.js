@@ -42,7 +42,7 @@ function Game() {
       {status === gameStatus.lost && <SadBanner answer={answer} />}
       <GuessInput
         onSubmit={addGuess}
-        disabled={gameStatus === gameStatus.running}
+        disabled={gameStatus !== gameStatus.running}
       />
     </>
   );
